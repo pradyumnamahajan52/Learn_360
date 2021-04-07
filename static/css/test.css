@@ -1,0 +1,138 @@
+body{
+    background-color: rgb(247, 242, 242);
+}
+
+.navbar{
+    top:0;
+    left:0;
+    height: 50px;
+    width:100%;
+    position: fixed;
+    align-content: center;
+    display:flex;
+    background:linear-gradient(to bottom, purple 0%, rgb(154, 49, 196) 80% , rgb(203, 127, 233) 100%);
+}
+
+.test-subjects{
+    margin-top:150px;
+}
+
+.test-subjects .column{
+    float: left;
+    width: 24.25%;
+    padding: 0 5px;
+}
+
+.test-subjects .row{
+    display: block;
+    margin:auto;
+    align-content: center;
+}
+
+.test-subjects  .card-block {
+    box-shadow: 0px 0px 8px  rgb(3, 240, 122,);
+    height:200px;
+    padding: 16px;
+    margin-top:10px;
+    text-align: center;
+    color: white;
+    background:url('/static/images/wall1.jpg');
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px white;
+}
+
+.test-subjects  .card-block:hover{
+    
+    border-bottom: 5px solid rgb(137, 40, 228);
+    /* background:linear-gradient( rgba(255, 166, 255, 0.6) 0%, rgb(192, 107, 226) 80% , rgb(203, 127, 233,0.3) 100%),url('images/wall1.jpg'); */
+    zoom: 110%;
+    box-shadow: 0px 0px 10px rgb(137, 40, 228);
+}
+
+.test-subjects  .card-block h1{
+    margin-top:10px;
+    margin-bottom:50px;
+    font-family: monospace;
+    text-shadow: 0px 0px 10px rgb(182, 55, 255);
+}
+
+
+.card-block-content .start-btn{
+    padding:10px 30px;
+    width:120px;
+    border:2px solid rgb(5, 255, 222);
+    height:40px;
+    color:white;
+    font-weight:bolder;
+    font-family: monospace;
+    border-radius: 10px;
+    
+    background-color: rgb(180, 12, 202);
+    box-shadow: 0px 0px 8px rgb(168, 43, 218);
+}
+
+.card-block-content .start-btn:hover,select{
+    background-color: rgb(0, 255, 221);
+}
+.card-block-content .start-btn,select{
+    border:none;
+    outline: none;
+}
+.test-subjects  .card-block:hover .start-btn{
+    color:black;
+    background-color: rgb(0, 255, 221);
+    box-shadow: 0px 0px 10px rgb(130, 219, 160);
+    border:2px solid rgb(0, 255, 221);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* For mobile */
+@media only screen and (max-width: 768px){
+
+    .test-subjects  .row .column{
+        width:80%;
+        padding-left:10%;
+       
+    }
+
+    .test-subjects{
+        margin-top:50px;
+    }
+    .test-subjects  .card-block:hover{
+        zoom:none;
+    }
+    
+}
+
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+
+    
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+
+   
+}
+  

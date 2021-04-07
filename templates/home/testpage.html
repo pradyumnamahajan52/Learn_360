@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/testpage.css' %}"
+    />
+
+    <title>test</title>
+    <script>
+      var questionPaperTimer = sessionStorage.getItem("exam-timer");
+      console.log(questionPaperTimer);
+
+      function getToken(name) {
+		    var cookieValue = null;
+		    if (document.cookie && document.cookie !== '') {
+		        var cookies = document.cookie.split(';');
+		        for (var i = 0; i < cookies.length; i++) {
+		            var cookie = cookies[i].trim();
+		            // Does this cookie string begin with the name we want?
+		            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+		                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+		                break;
+		            }
+		        }
+		    }
+		    return cookieValue;
+		}
+		var csrftoken = getToken('csrftoken')
+
+
+      // Set the date we're counting down to
+      //   var countDownDate = (new Date().getTime()+(600*1000));
+      var countDownDate = questionPaperTimer;
+
+      // Update the count down every 1 second
+      var x = setInterval(function () {
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("timer").innerHTML = minutes + ":" + seconds;
+
+        if (distance < 0) {
+          clearInterval(x);
+          endExamTimeOut();
+          document.getElementById("timer").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+    </script>
+  </head>
+
+  <body>
+    <div class="start-confirmation">
+      <button class="start-confirmation-btn" onclick="view()">START</button>
+    </div>
+
+    <div class="q-blocks">
+      <div id="timer"></div>
+      <div id="demo"></div>
+    </div>
+    
+
+    <!-- Test section -->
+
+    <div class="test-section">
+      <div class="test-paper">
+        <h4 class="question">what is your name ?</h4>
+        <ul>
+          <li>
+            <input type="radio" name="answer" id="A" class="answer" />
+            <label id="option1" for="A">option 1</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="B" class="answer" />
+            <label id="option2" for="B">option 2</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="C" class="answer" />
+            <label id="option3" for="C">option 3</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="D" class="answer" />
+            <label id="option4" for="D">option 4</label>
+          </li>
+        </ul>
+       
+      </div>
+      
+    </div>
+
+    <div class="button-block">
+      <div class="buttons">
+        <div class="prev">
+          <button id="prev-btn">
+            <i class="fa fa-arrow-left"></i> previous
+          </button>
+        </div>
+        <div class="submit">
+          <button id="submit-btn">Save</button>
+        </div>
+        <div class="next">
+          <button id="next-btn">Next <i class="fa fa-arrow-right"></i></button>
+        </div>
+      </div>
+      <button onclick="endExam()" id="finish-btn"> Finish test</button>
+    </div>
+
+    <div></div>
+
+    
+
+    <!-- popup alert -->
+    <div class="popup">
+      <h2>Do you want to save ?</h2>
+      <div class="btns">
+        <button onclick="popupYes()">yes</button>
+      <button onclick="popupNo()">No</button>
+      </div>
+      
+    </div>
+
+    <div class="popup-result">
+      <h2>You have scored</h2>
+      <p id="result"></p>
+      <div class="btns">
+        <button onclick="okay()">ok</button>
+
+      </div>
+      
+    </div>
+
+    
+
+    <!-- Select Something popup alert -->
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/endExam.js' %}"></script>
+
+  </body>
+</html>

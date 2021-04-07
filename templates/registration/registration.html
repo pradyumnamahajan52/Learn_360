@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/loginpage.css' %}"
+    />
+    <title>Learn-360 | Registration</title>
+  </head>
+
+  <body>
+    <div class="loginpage">
+      <i class="fa fa-lock"></i>
+
+      <div class="loginform">
+        {% if messages %}
+        <ul>
+          {% for m1 in messages %}
+          <li>
+            <div
+              class="alert alert-danger"
+              style="text-align: center"
+              role="alert"
+            >
+              {{m1.message}}
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        <h1>Create your Account</h1>
+
+        <form method="POST">
+          {% csrf_token %} {{form}}
+          <input id="create-btn" type="submit" value="Create Account" />
+
+          <div class="fpass">
+            <a href="/user/login/">Sign in instead</a>
+          </div>
+        </form>
+      </div>
+
+      <button id="back-btn" onclick="goBack()">
+        <i class="fa fa-arrow-back"></i>Back
+      </button>
+    </div>
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+  </body>
+</html>

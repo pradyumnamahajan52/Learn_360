@@ -1,0 +1,223 @@
+
+body{
+    margin:0;
+    padding:0;
+}
+/*************** Navigation Bar *******************/
+
+header{
+    background:linear-gradient( rgb(160, 42, 160,0.5) 0%, rgb(154, 49, 196,0.2) 80% , rgb(203, 127, 233,0.3) 100%),url('/static/images/wall1.jpg');
+    background-size: cover;
+    background-position: center;
+    height:100vh;
+}
+.navbar{
+    top:0;
+    left:0;
+    height: 50px;
+    width:100%;
+    position: fixed;
+    align-content: center;
+    display:flex;
+    
+}
+
+.navbar-change{
+    z-index:999;
+    
+    background:linear-gradient(to bottom, purple 0%, rgb(154, 49, 196) 80% , rgb(203, 127, 233) 100%);
+}
+
+.menu-icon .fa-bars{
+    font-size: 30px;
+    color:white;
+    padding-left:20px;
+    padding-top:10px;
+}
+
+.brand{
+    flex:1;
+}
+
+.brand h1{
+    padding-left:20px;
+    margin:5px;
+    color:white;
+    font-size: 30px;
+    text-shadow: 0px 0px 3px yellow;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-blend-mode: screen;
+}
+
+.links{
+    padding-right:100px;
+}
+
+.links ul{
+    display:flex;
+    list-style: none;
+}
+
+.links li a{
+    font-weight:bolder;
+    padding-left:20px;
+    padding-right:20px;
+    color:white;
+    text-decoration:none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.links li a:hover{
+    color:rgb(100, 233, 73);
+    text-shadow:0px 0px 5px rgb(29, 82, 8);
+}
+
+
+/******************* Sidebar Styling ************/
+.backdrop{
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background-color: rgb(0,0,0,0.5);
+    z-index:9;
+    position: fixed;
+    display: none;
+    scroll-behavior:unset;
+}
+.sidebar{
+    top:0;
+    left:0;
+    padding:0;
+    margin:0;
+    width:300px;
+    z-index:999;
+    height:100vh;
+    display:none;
+    position: fixed;
+    transition: 1s;
+    overflow-y: hidden;
+    background-color: rgb(245, 240, 240);
+    box-shadow: 5px 5px 10px rgb(204, 198, 198);
+}
+
+.side-header{
+    width:100%;
+    height:80px;
+    background-color: purple;
+    display: flex;
+    align-content: center;
+    align-items: center;  
+}
+
+.side-header .fa-user-circle{
+    font-size:40px;
+    color:white;
+    padding-left:15px;
+   
+}
+
+.side-header .name{
+    flex:1;
+    padding-left:10px;
+}
+
+.side-header .name h5{
+    color:white;
+    font-family: monospace;
+    font-size: 18px;
+}
+
+
+.side-links ul{
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+
+.side-links ul li{
+    background-color: white;
+    line-height:50px;
+    align-items:center;
+    border-bottom: 2px solid grey;
+}
+
+.side-links ul a{
+    text-decoration: none;
+}
+
+.side-links ul a i{
+    padding-right:15px;
+    font-size: 20px;
+}
+
+.side-links ul a .fa{
+    font-size: 25px;
+}
+.side-links ul a li{
+    color:purple;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration:none;
+    align-content: center;
+    padding-left: 20px;
+}
+.side-links ul li:hover{
+   background-color:rgb(83, 255, 30);
+}
+
+.front-heading{
+    position: absolute;
+    top:15%;
+    text-align: center;
+    padding-left:25%;
+    width:50%;
+    color:white;
+    font-size:25px;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0px 0px 30px gold;
+    
+}
+
+.front-heading h1{
+    margin:0%;
+    padding: 20px 0px;
+    text-align: center;
+    align-items: center;
+    border:1px solid rgb(251, 255, 0);
+    box-shadow:inset 0px 0px 90px rgb(255, 238, 0);
+}
+
+
+
+
+/**************** Responsive styling  ************************/
+
+/* For mobile */
+@media only screen and (max-width: 768px){
+    .links{
+        display:none;
+    }
+
+    .banner{
+        flex-direction: column;
+    }
+    .front-heading{
+        width:90%;
+        padding-left:5%;
+    }
+}
+
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+
+    
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+
+   
+}
+  

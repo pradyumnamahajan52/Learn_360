@@ -1,0 +1,378 @@
+body{
+    background-color:rgb(243, 242, 239);
+    margin:0;
+    padding:0;
+    padding-bottom:250px;
+}
+
+.start-confirmation{
+    top:0;
+    left:0;
+    height:100vh;
+    width:100%;
+    background-color: rgb(0, 0, 0,0.9);
+    position: fixed;
+    z-index:99999;
+    display:block;
+    
+}
+
+.start-confirmation-btn{
+    height:50px;
+    width:200px;
+    background-color: white;
+    border: 2px solid rgb(189, 115, 189);
+    border-radius: 5px;
+    color:rebeccapurple;
+    font-weight: bolder;
+    font-size: 20px;;
+    font-family: monospace;
+    display:block;
+    margin:auto;
+    margin-top:300px;
+}
+.start-confirmation-btn:focus,select,.start-confirmation-btn:hover{
+    outline: none;
+    border:none;
+    color:white;
+    background-color:rgb(133, 76, 240);
+}
+
+/********************** Test section ****************************/
+.box{
+    height:100px;
+    width:100px;
+    background-color: red;
+}
+
+.q-blocks{
+    top:0;
+    width:100%;
+    display:block;
+    margin:auto;
+    padding:5px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    position: fixed;
+    height:70px;
+    background:linear-gradient(to bottom, purple 0%, rgb(154, 49, 196) 80% , rgb(203, 127, 233) 100%);
+}
+
+#demo{
+    display: inline-flex;
+    width:90%;
+    margin-left:5%;
+    margin-right:5%;
+    overflow-x: scroll;
+}
+
+#timer{
+    background-color: rgb(0, 132, 255);
+    color:white;
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: monospace;
+    text-align: center;
+    padding: 10px;
+    min-width: 100px;
+    padding-top:20px;
+    padding-bottom: 20px;;
+    
+}
+
+h1{
+    background-color: white;
+    padding:10px;
+    min-width:40px;
+    height:40px;
+    text-align: center;
+    font-family: monospace;
+    color:black;
+    font-weight:bolder;
+    box-shadow:inset 0px 0px 5px rgb(200, 193, 201);
+    /* border:1px solid black; */
+}
+
+.test-section{
+    display:block;
+    margin:auto;
+    align-self: center;
+    margin-top: 100px;
+}
+
+.test-section h1{
+    text-align: center;
+    font-weight:bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(107, 221, 107);
+    width:50%;
+    margin:auto;  
+}
+
+.test-paper{
+    background-color:rgb(252, 251, 250);
+    box-shadow: 0px 0px 10px rgb(204, 202, 202);
+    display: block;
+    margin:auto;
+    width:50%;
+    margin-top:10px;
+    padding: 10px 50px;
+}
+
+.test-paper ul{
+    list-style: none;
+    margin-left:0px;
+    padding-left:0px;
+}
+
+.test-paper ul label{
+    color:grey;
+}
+
+.button-block {
+	width:50%;
+    display:block; 
+    margin:auto;
+}
+
+.buttons {
+	width:100%;
+	display:flex;
+  	flex-direction:row;
+      
+}
+
+.buttons div {
+	flex:1;
+    text-align:center;
+   
+}
+
+.buttons div button{
+	width:100%;
+    text-align:center;
+   
+}
+
+#finish-btn{
+    background-color:rgb(180, 76, 240);
+    height:40px;
+    width:99%;
+    border:none;
+    color:white;
+    font-weight:bolder;
+    font-size:16px;
+    font-family: monospace;
+    box-shadow: 0px 0px 5px grey;
+    margin-left:0.5%;
+}
+#finish-btn:hover{
+    background-color:rgb(68, 190, 105);
+}
+
+#submit-btn{
+    background-color:rgb(19, 214, 68);
+    height:40px;
+    padding-left:5px;
+    border:none;
+    color:white;
+    font-weight:bolder;
+    font-size:17px;
+    margin-top:10px;
+    font-family: monospace;
+}
+
+#submit-btn:hover{
+    background-color:rgb(68, 211, 116);
+}
+#prev-btn{
+    height:40px;
+    padding-left:5px;
+    border:none;
+    color:white;
+    font-weight:bolder;
+    font-size:17px;
+    margin-top:10px;
+    font-family: monospace;
+    background-color:rgb(66, 99, 104);
+}
+
+#prev-btn:hover{
+    background-color:rgb(35, 59, 63);
+}
+#next-btn{ 
+    height:40px;
+    padding-left:5px;
+    border:none;
+    color:white;
+    font-weight:bolder;
+    font-size:17px;
+    margin-top:10px;
+    font-family: monospace;
+    background-color:rgb(66, 99, 104);
+}
+
+#next-btn:hover{
+    background-color:rgb(35, 59, 63);
+    
+}
+
+#prev-btn:focus,select,#submit-btn:focus,select,#next-btn:focus,select{
+    outline: none;
+    border:none;
+}
+
+#numbers{
+    background-color:red;
+    padding:5px;
+    width:50px;
+}
+
+
+.popup{
+    /* position: absolute;
+    top:100px;
+    left:25%;
+    background-color: rgb(165, 39, 39);
+    color:white;
+    height:300px;
+    width:50%;
+    margin:auto;
+    display:none;
+    text-align: center;
+    padding-top:100px; */
+
+    top:0;
+    left:0;
+    height:100vh;
+    width:100%;
+    background-color: rgb(0, 0, 0,0.9);
+    position: fixed;
+    z-index:99999;
+    display:none;
+    text-align: center;
+    padding-top:200px;
+    color:white;
+    
+}
+.btns{
+    display:block;
+    margin:auto;
+}
+
+.popup button{
+    border: 2px solid rgb(189, 115, 189);
+    border-radius: 5px;
+    color:rebeccapurple;
+    font-weight: bolder;
+    font-size: 20px;;
+    font-family: monospace;
+
+    height:40px;
+    width:130px;
+}
+
+.select-something{
+    position: absolute;
+    top:100px;
+    left:25%;
+    background-color: rgb(165, 39, 39);
+    color:white;
+    height:300px;
+    width:50%;
+    margin:auto;
+    display:none;
+    text-align: center;
+    padding-top:100px;
+}
+
+.here{
+    border-bottom:5px solid rgb(8, 255, 160);
+}
+.done{
+    background-color: rgb(8, 255, 160);
+}
+.notdone{
+    background-color:rgb(253, 56, 56);
+}
+
+
+.center{
+    display:block;
+    margin:auto;
+    text-align: center;
+
+}
+
+
+ /* For mobile */
+@media only screen and (max-width: 768px){
+    .buttons{
+        display:block;
+    }
+
+    #finish-btn{
+        position: fixed;
+        width:100%;
+        left:0;
+        bottom:0;
+        margin-left:0px;
+    }
+
+    #prev-btn{
+        position: fixed;
+        left:0;
+        bottom:40px;
+        width:50%;
+    }
+    #next-btn{
+        position: fixed;
+        right:0;
+        bottom:40px;
+        width:50%;
+    
+    }
+    #submit-btn{
+        position: fixed;
+        display:block;
+        margin:auto;
+        bottom:100px;
+        width:50%;
+    }
+    .test-paper{
+        width:90%;
+        padding: 10px 15px;
+    }
+    
+    /* .popup{
+        width:70%;
+        margin-left:15%;
+    } */
+}
+
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+    .submit,.prev,.next {
+        padding:5px;
+    }
+
+    
+    #demo{
+        overflow-x: scroll;
+      }
+      
+     #demo::-webkit-scrollbar {
+        display: none;
+      }
+}
+
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+
+   
+}
+
+
+

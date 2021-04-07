@@ -1,0 +1,144 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/static/web_hi_res_512.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
+
+    <title>{% block title %}{% endblock %}</title>
+    {% block head %} {% endblock %}
+    <script>
+      localStorage.clear();
+
+      //opens the sidebar on click
+      function openSidebar() {
+          document.querySelector('.sidebar').style.display = " block";
+          document.querySelector('.backdrop').style.display = " block";
+
+          
+              document.querySelector('body').style.overflow ="hidden";
+
+      }
+      function closeSidebar() {
+          document.querySelector('.sidebar').style.display = "none";
+          document.querySelector('.backdrop').style.display = "none";
+          sidebar =0;
+      }
+
+
+
+     
+
+      // changes style on scrolling
+      $(window).on("scroll", function () {
+
+          if ($(window).scrollTop()) {
+              $('.navbar').addClass('navbar-change');
+          }
+          else if (document.body.scrollTop === 0) {
+              $('.navbar').removeClass(' navbar-change');
+          }
+      })
+
+
+      
+      console.log('working')
+      if (localStorage.getItem('exam_paper') == null) {
+          var exam_paper = {};
+      }
+      else {
+          exam_paper = JSON.parse(localstorage.getItem('exam_paper'));
+      }
+
+      //jQuery starts here//
+      $('.cart').click(function(){
+
+      console.log('clicked');
+      });
+    </script>
+   
+  </head>
+
+  <body>
+    <!-- Top Navigation bar -->
+    <header>
+      <nav>
+        <div class="navbar">
+          <div class="menu-icon">
+            <i class="fa fa-bars" onclick="openSidebar()"></i>
+          </div>
+          <div class="brand">
+            <!-- <h1><img src="/static/web_hi_res_512.png" alt="logo" style="height: 25px;" /> Learn-360</h1> -->
+            <h1>Learn-360</h1>
+          </div>
+          <div class="links">
+            <ul>
+              <li><a href="/">HOME</a></li>
+              <li><a href="/exam/quiz/select/">TEST</a></li>
+              {% if user.is_authenticated %}
+              <li><a href="/exam/quiz/history/">Test-History</a></li>
+              <!-- <li><a href="user/dashboard/">My-Account</a></li> -->
+              <li><a href="/user/accounts/logout/">LOGOUT</a></li>
+              {% else %}
+              <li><a href="/user/login/">LOGIN</a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Backdrop  -->
+    <div class="backdrop" onclick="closeSidebar()"></div>
+
+    <!-- Side navigation bar -->
+    <div class="sidebar">
+      <div class="side-header">
+        <div class="icon"><i class="fa fa-user-circle"></i></div>
+        <div class="name">
+          <h5>Hello,{{ user.first_name|default:'Guest' }}</h5>
+        </div>
+      </div>
+
+      <div class="side-links">
+        <ul>
+          <a href="/">
+            <li><i class="fa fa-home"></i>HOME</li>
+          </a>
+          <a href="/exam/quiz/select/">
+            <li><i class="fa fa-paste"></i>Test</li>
+          </a>
+          {% if user.is_authenticated %}
+          <a href="/exam/quiz/history/">
+            <li><i class="fa fa-history"></i>Test-History</li>
+          </a>
+          <!-- <a href="user/dashboard/">
+            <li><i class="fa fa-user"></i>My-Account</li>
+          </a> -->
+          <a href="/user/accounts/logout/">
+            <li><i class="fa fa-sign-out"></i>Logout</li>
+          </a>
+          {% else %}
+          <a href="/user/login/">
+            <li><i class="fa fa-lock"></i>Login</li>
+          </a>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+
+    {% block content %} {% endblock %} {% block footer %} {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+  </body>
+</html>

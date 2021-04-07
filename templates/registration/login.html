@@ -1,0 +1,57 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/loginpage.css' %}">
+    <style>
+
+    </style>
+    <title>Learn-360 | Login</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div class="loginpage">
+        <i class="fa fa-lock"></i>
+
+
+        <div class="loginform">
+
+            <h1>$ign-in</h1>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+              <input id="submit-btn" type="submit" value="Login">   
+              <a href="/user/signup/"  id="create-btn">Create Account</a>         
+                
+              <a href="#" id="signin-facebook"><img src="{% static 'images/facebook-2.svg' %}" /></a><br>
+              <a href="#" id="signin-google"><img src="{% static 'images/google-icon.svg' %}" /></a>  
+
+            </form>
+           
+            <div class="fpass">
+                <a  href="forgotpassword.html">Forgot Password ?</a>
+            </div>
+        </div>
+
+        <button id="back-btn" onclick="goBack()"><i class="fa fa-arrow-back"></i>Back</button>
+    
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>

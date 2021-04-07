@@ -1,0 +1,40 @@
+{% extends "home/base1.html" %} 
+{% load static %} 
+{% block title %}Learn-360{%endblock %} 
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/test.css' %}" />
+<script>
+	var user = '{{request.user}}'
+</script>
+{% endblock %} 
+{% block content %}
+
+<div class="test-subjects">
+  <div class="row">
+
+    {% for ex in examSubject %}
+    <div class="column">
+
+      <div class="card-block" style="background:url('/media/{{ex.subject_image}}');background-size: cover;background-repeat:no-repeat;background-position: center;">
+        <h1>{{ex.subject}}</h1>
+        <h4>Total Mark:{{ex.total_mark}} 
+        Exam Time:{{ex.exam_start_time}}
+        Exam Duration:{{ex.exam_time}} 
+      </h4>
+
+        <div class="card-block-content">
+          <a href="javascript:void(0)" class="start-btn" onclick="startTest('{{ex.id}}')"
+            >START TEST</a
+          >
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %} 
+{% block footer %} 
+<script src="{% static 'js/test.js' %}"></script>  
+{% endblock %}
